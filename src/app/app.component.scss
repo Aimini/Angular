@@ -1,0 +1,65 @@
+*
+{
+    transition: ease-in-out .25s;
+}
+
+.heroes
+{
+    list-style-type: none;
+    padding:  0;
+    width: 15em;
+
+    li
+    {
+        transition-duration: 0.1s;
+        transition-property: transform;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+        background: #EEE;
+        margin: .5em;
+        border-radius: 5px;
+        
+        &:hover
+        {
+            color: #607D8B;
+            background-color: #DDD;
+            transform: scale(1.05);
+        }
+
+        &:active
+        {
+            transform: scale(0.89);
+        }
+
+        &.selected
+        {
+            background-color: #AFD8DC;
+            color: white;
+
+            &:hover 
+            {
+                background-color: #BBD8DC !important;
+                color: white;
+            }
+        }
+    }
+
+    .badge
+    {
+        display: inline-flex;
+        font-size: small;
+        padding: .6em;
+        color: white;
+        background-color: #607D8B;
+        margin-right: .8em;
+        border-radius: 4px 0 0 4px;
+    }
+
+    .text
+    {
+        position: relative;
+        top: -3px;
+    }
+}
