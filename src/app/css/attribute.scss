@@ -1,0 +1,34 @@
+$tiny-black: rgba(0,0,0,0.1);
+$slight-black: rgba(0,0,0,0.15);
+$normal-black: rgba(0,0,0,0.3);
+$bold-black : rgba(0,0,0,0.6);
+$heavy-black : rgba(0,0,0,0.9);
+$transparent: rgba(0,0,0,0);
+$slight-white: rgba(255,255,255,0.1);
+$normal-white: rgba(255,255,255,0.3);
+$bold-white: rgba(255,255,255,0.6);
+$heavy-white : rgba(255,255,255,0.9);
+
+$slight-padding: .1em;
+$normal-padding: .3em;
+$bold-padding: .6em;
+$heavy-padding: 1em;
+
+
+
+$div-box-shadow: 0 2px 5px 1px $normal-black;
+$shadow-slight-pos-flow: 0 1px 2px 1px;
+$shadow-normal-pos-flow: 0 4px 7px 1px;
+$shadow-heavy-pos-flow: 0 8px 15px 1px;
+$shadow-slight-pos-shiftr: 1px 0 2px 1px;
+$shadow-normal-pos-shiftr: 2px 0 4px 1px;
+$shadow-heavy-pos-shiftr: 4px 0 8px 1px;
+$shadow-slight-pos-under: 0 0px 2px 1px;
+$shadow-normal-pos-under: 0 0px 4px 1px;
+$shadow-heavy-pos-under: 0 0px 8px 1px;
+
+$btn-border: 1px solid $slight-black;
+$btn-box-shadow-pos: 0 0 6px;
+
+
+$border-round: 5px;

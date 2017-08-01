@@ -1,0 +1,43 @@
+@import "attribute.scss";
+
+
+@mixin left-nav($width,$bgcolor)
+{
+    background-color: $bgcolor;
+    overflow: visible;
+    font-size: 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width:$width;
+    box-shadow: $shadow-normal-pos-under $bold-black;
+    z-index: 9999;
+}
+
+@mixin nav-list($textcolor,$bgcolor,$hoverbgcolor)
+{
+    list-style: none;
+    padding:0;
+    margin: 0;
+    text-align: center;
+    z-index: 9999;
+    li
+    {
+        color: $textcolor;
+        width: 100% ;
+        padding: 0.5em 0;
+        border-radius: 5px;
+        background-color: $bgcolor;
+        border: solid 1px $tiny-black;
+        &:hover
+        {
+            cursor: pointer;
+            transform: scale(1.02);
+            margin-left: 0.5em;
+            box-shadow:$shadow-heavy-pos-shiftr  $normal-black;
+        }
+    }
+}
+
+

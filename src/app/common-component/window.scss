@@ -1,0 +1,40 @@
+.window
+{
+  border-radius: 5px;
+    border: 1px solid $slight-black;
+    margin: .7em;
+}
+
+
+.window-tilte
+{
+  border-radius: 5px 5px 0 0;
+  margin: 0;
+  padding: 1em;
+  background-color: $bold-black;
+  color: white;
+  box-shadow:0 2px 4px -1px $normal-black; /*底边阴影*/  
+}
+
+.window-context
+{
+      box-shadow: 0 0px 6px -2px $normal-black inset;
+}
+
+.module {
+  display: inline-block;
+  padding: 1em;
+  margin: 1em;
+  text-align: center;
+  color: #eee;
+  width: 5em;
+  height: 4em;
+  background-color: #607D8B;
+  border-radius: 3px;
+}
+
+.module:hover {
+  background-color: #EEE;
+  cursor: pointer;
+  color: #607d8b;
+}

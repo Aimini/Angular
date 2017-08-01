@@ -1,0 +1,158 @@
+@import "attribute.scss";
+@mixin btn-link($text-color,$back-ground-color,$shine-color,$hover-color)
+{
+    color: $text-color; 
+    text-decoration: none;
+    padding: $bold-padding;
+    background-color:$back-ground-color;
+
+    border:$btn-border
+    {
+        radius: 5px;  
+        color:$text-color;  
+    }
+    
+    &:hover
+    {
+        text-decoration:underline; 
+        color:$hover-color;
+        border:
+        {
+            color: $hover-color;
+        }
+        cursor: pointer;
+        box-shadow: $btn-box-shadow-pos $shine-color ,$btn-box-shadow-pos $shine-color inset;
+        text-shadow:$btn-box-shadow-pos  $shine-color;
+    }
+}
+
+.btn-link-white
+{
+    @include  btn-link($heavy-white,$slight-white,$heavy-white,white);
+}
+
+.btn-link-black
+{
+     @include  btn-link($heavy-black,rgba(0,0,0,0),$normal-black,black);
+}
+
+
+
+
+/*
+这些button样式通常用于将文本为'+' '-' 'x'的<p>伪装成删除/添加按钮
+直接将样式加在<button>上也是可以的
+*/
+
+@mixin normal-btn($color)
+{
+    width: 2em;
+    padding: $normal-padding 0;
+    background-color: $transparent;
+    color: $color;
+    font-size: 1em;
+
+    text-align: center;
+    font-weight: bolder;
+    border: 1px solid $slight-black;
+    border-radius: $border-round;
+    &:hover
+    {
+        transform: scale(1.02);
+        cursor:pointer;
+        box-shadow: $shadow-normal-pos-flow $normal-black;
+    }
+    &:active
+    {
+        transform: scale(0.95);
+        cursor:pointer;
+        box-shadow: $shadow-slight-pos-flow  $normal-black;
+    }
+}
+
+.text-btn-green
+{
+    @include normal-btn( #64bd63);
+}
+
+.text-btn-red
+{
+    @include normal-btn( #64bd63);
+}
+
+//圆角按钮
+@mixin round-btn-base($radius)
+{
+    /*line-height:$radius/2;
+    width:$radius;
+    height: $radius;
+    position: relative;
+    border:1px solid $slight-black
+    {
+        radius:50%;
+    }*/
+        width:$radius;
+        height: $radius;
+        border-radius: 50%;
+        box-shadow: $shadow-normal-pos-under $normal-black;
+
+        border:1px solid $slight-black;
+        background-repeat: no-repeat;
+        background-size: $radius;
+        text-decoration: none;
+        color:white;
+        overflow:hidden;
+
+    $scaler : 1.15;
+    $pswidth : $radius/1.4142135623731;
+    $ppad :($radius - $pswidth)/2;   
+    p
+    {
+        width: $pswidth;
+        height: $pswidth;
+        margin: 0em;
+        padding:$ppad;
+        text-align: center;
+        position: absolute;
+        right: -10em;
+    }
+    div
+    {
+        z-index: 99;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
+
+
+    &:hover
+    {
+        transform: scale($scaler);
+        box-shadow: $shadow-normal-pos-flow $normal-black;
+
+        p
+        {
+            z-index: 999;
+            right: 0em;
+        }
+
+         div
+        {
+            background-color: rgba(88,88,88,0.8);
+        }
+
+    }
+
+    &:active
+    {
+        transform: scale(0.95);
+        box-shadow: $shadow-slight-pos-flow $bold-black;
+    }
+ 
+}
+
+
+.round-btn
+{
+    @include round-btn-base(4em);
+}

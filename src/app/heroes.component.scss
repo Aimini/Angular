@@ -1,6 +1,6 @@
 *
 {
-    transition: ease-in-out .25s;
+    transition: ease-in-out .15s;
 }
 
 .heroes
@@ -8,7 +8,9 @@
     list-style-type: none;
     padding:  0;
     width: 15em;
-
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 1em;
+    border-radius: 5px;
     li
     {
         transition-duration: 0.1s;
@@ -30,18 +32,27 @@
 
         &:active
         {
-            transform: scale(0.89);
+            transform: scale(0.92);
+            .delete-btn
+            {
+                    transform: scale(calc(1/0.92));
+            }
         }
-
         &.selected
         {
             background-color: #AFD8DC;
             color: white;
+        }
 
-            &:hover 
+        .delete-btn
+        {
+            background-color: gray !important;
+            color:white;
+            border:none;
+
+            &:hover
             {
-                background-color: #BBD8DC !important;
-                color: white;
+               background-color: red !important; 
             }
         }
     }

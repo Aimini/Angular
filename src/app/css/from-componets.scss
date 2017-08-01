@@ -1,0 +1,193 @@
+@import "attribute.scss";
+
+.div-shadow
+{
+    box-shadow: $div-box-shadow;
+}
+
+.div-hover-shadow
+{
+   box-shadow:0 0 0 $transparent;
+    &:hover{
+         @extend .div-shadow;
+    }
+}
+
+.div-shadow
+{
+    box-shadow: $div-box-shadow;
+}
+
+.div-hover-shadow
+{
+   box-shadow:0 0 0 $transparent;
+    &:hover{
+         @extend .div-shadow;
+    }
+}
+
+.info-edit-table
+{
+    text-align: center;
+    border-collapse:collapse;
+    width:100%;
+}
+
+
+$tab-pad : $normal-padding;
+$input-pad: $bold-padding;
+.info-edit-table td
+{
+    border: 1px solid;
+    color: $normal-black;
+    padding:$tab-pad;
+    font-weight: normal;
+}
+
+.info-edit-input
+{
+    min-width: 1px;
+    width: #{'calc(100%'} - 2*($tab-pad+$input-pad)#{')'};
+    border-radius: $border-round;
+    border:1px solid $slight-black;
+    padding: $input-pad;
+    text-align: center;
+
+    &:disabled
+    {
+        border:none;
+        text-align: center;
+        background-color: $transparent;
+        &:hover
+        {
+            box-shadow:$shadow-normal-pos-under $transparent;
+        }
+    }
+
+    &:hover
+    {
+        box-shadow:$shadow-normal-pos-under $normal-black;
+    }
+}
+
+
+
+@mixin base-switch-checkbox($width,$height)
+{
+
+        width: $width;
+        height: $height;
+        position: relative;
+        border: 1px solid $slight-black;
+        background-color:$slight-white;
+        border-radius: $height;
+        display: inline-block;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+   
+        user-select: none;
+    &:hover
+    {
+        cursor: hand;
+    }
+    &:before
+    {
+        transition-duration: .2s;
+        content: '';
+        width: $height*0.9;
+        height: $height*0.9;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 50%;
+        background: #fff linear-gradient(rgba(255, 255, 255, 0.83), rgba(235, 235, 235, 0.45));
+        box-shadow: $shadow-slight-pos-flow $normal-black;
+    }
+    
+    &:checked:before
+    {
+        left: #{'calc(100% -'} 0.9*$height #{')'};
+    }
+}
+
+@mixin switch-checkbox($width,$height,$color)
+{
+   @include base-switch-checkbox($width,$height);
+    &:checked
+    {
+        background-color: $color;
+    }
+} 
+
+.switch-checkbox-green
+{
+    @include switch-checkbox(2.2em,1.1em,#64bd63);
+}
+
+.switch-checkbox-red
+{
+    @include switch-checkbox(2.2em,1.1em,rgba(207, 34, 24, 0.93))
+}
+
+.switch-checkbox-orange
+{
+    @include switch-checkbox(2.2em,1.1em,rgba(245, 247, 0, 0.93));
+}
+
+
+
+.radio-blue
+{
+    border-radius: 50%;
+    padding:0.5em;
+    border:1px solid $slight-black;
+    -webkit-appearance: none;
+     -moz-appearance: none;
+     position: relative;
+     &::before
+     {
+         transition-duration: 0.2s;
+          position: absolute;
+         content: ' ';
+         top: 0.5em;
+        left: 0.5em;
+           padding:0.0em;
+         border-radius: 50%;
+         
+        
+     }
+     &:checked
+    {
+        transform: scale(1.2);
+        background-clip: border-box;
+        
+        box-shadow: $shadow-slight-pos-under $tiny-black;
+
+        &::before
+        {
+            top: 0.15em;
+            left: 0.15em;
+            padding:0.35em;
+            background: linear-gradient(rgba(111,190,235,0.8) 0%,rgba(111,190,235,0.8) 30%,rgba(80,150,205,0.8) 100%);
+        }
+    }
+}
+
+.select-common
+{
+    border-radius: $border-round;
+    padding: $normal-padding;
+    background: linear-gradient(transparent 40%,$tiny-black 100%);
+    option
+    {
+        padding: $normal-padding;
+        :hover
+        {
+            transform:scale(1.1);
+            background:linear-gradient(transparent 60%,$tiny-black 100%);
+        }
+    }
+}
+
+
+

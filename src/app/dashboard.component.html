@@ -1,0 +1,9 @@
+<div class="area">
+  <h3 class="title">Top Heroes</h3>
+  <div class="card-area">
+    <a *ngFor="let hero of heroes" [routerLink]="['/detail',hero.id]" class="module">
+        <h4>{{hero.name}}</h4>
+    </a>
+  </div>
+</div>
+<hero-search></hero-search>
