@@ -1,5 +1,5 @@
 # AI's Speak
-## project is comiming form official demo
+## project is coming form official demo
 
 <h2 style="font-weight:bold">these text below is generate by cli</h2>
 <hr/>
